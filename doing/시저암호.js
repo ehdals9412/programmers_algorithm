@@ -1,22 +1,31 @@
 'use strict';
 
 function solution(s, n) {
-  var answer = '';
-  const charToNum = s.charCodeAt(1) + 1;
-  const numToChar = String.fromCharCode(charToNum);
+  return s
+    .split('')
+    .map((item) => {
+      if (item === ' ') {
+        return item;
+      }
 
-  for (let i = 0; i < s.length; i++) {
-    if (s == 'z') {
-    }
-    const code = s.charCodeAt(i) + n;
-    const result = String.fromCharCode(code);
-    answer += result;
-    console.log(answer);
-  }
+      const code = item.charCodeAt();
+      console.log(code);
 
-  return answer;
+      let num;
+      code < 97
+        ? (num = 65 + ((item.charCodeAt() + n - 65) % 26))
+        : (num = 97 + ((item.charCodeAt() + n - 97) % 26));
+
+      return String.fromCharCode(num);
+    })
+    .join('');
 }
 
-const s = 'z';
-const n = 1;
+const s = 'a B z';
+const n = 2;
 console.log(solution(s, n));
+
+// const arr = ['a', 'B', '!'];
+// const res = arr.filter((item) => !item.match(/^[a-zA-Z]*$/));
+// console.log(res.join('').replace('!', ' '));
+// console.log(res);
