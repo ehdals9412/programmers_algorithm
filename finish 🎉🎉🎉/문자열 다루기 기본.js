@@ -19,6 +19,21 @@ function solution(s) {
     answer = false;
   }
   return answer;
+  /* 욱동님 코드 👍
+  let answer = true;
+
+  if (s.length === 4 || s.length === 6) {
+    for (let i = 0; i < s.length; i++) {
+      console.log(isNaN(Number(s[i])));
+      if (isNaN(Number(s[i]))) {
+        answer = false;
+      }
+    }
+  } else {
+    answer = false;
+  }
+  return answer;
+  */
 }
 
 console.log(solution(str));
