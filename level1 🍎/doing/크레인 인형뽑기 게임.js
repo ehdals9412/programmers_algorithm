@@ -1,25 +1,27 @@
 'use strict';
 
 function solution(board, moves) {
-  var answer = 0;
   let basket = [];
   let count = 0;
+
   for (let i = 0; i < moves.length; i++) {
     for (let j = 0; j < board.length; j++) {
       if (board[j][moves[i] - 1] !== 0) {
-        console.log(`${moves[i]}열 : ${board[j][moves[i] - 1]}`);
-        basket.push(board[j][moves[i] - 1]);
-        board[j][moves[i] - 1] = 0;
-        // 앞뒤중에서 같은 숫자가 있으면 그 2개의 숫자 삭제
-        // ?????
-        break;
+        if (basket[basket.length - 1] === board[j][moves[i] - 1]) {
+          basket.pop();
+          count += 2;
+          board[j][moves[i] - 1] = 0;
+          break;
+        } else {
+          basket.push(board[j][moves[i] - 1]);
+          board[j][moves[i] - 1] = 0;
+          break;
+        }
       }
     }
-    console.log('=======================');
   }
   console.log(basket);
-
-  return answer;
+  return count;
 }
 
 // 게임판

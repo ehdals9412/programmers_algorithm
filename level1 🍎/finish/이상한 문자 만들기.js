@@ -13,9 +13,11 @@ function solution(s) {
         .join('')
     )
     .join(' ');
+
   /* 
   통과 못한 코드 👎
-  for (let i = 0; i < str.length; i++) {
+  for (let i = 0; i < str.length; i++) {  participant.sort();
+  completion.sort();
     const result = str[i].split('');
 
     for (let j = 0; j < result.length; j++) {

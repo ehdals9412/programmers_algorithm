@@ -4,15 +4,12 @@ function solution(s, n) {
   return s
     .split('')
     .map((item) => {
-      if (item === ' ') {
-        return item;
-      }
+      if (item === ' ') return item;
 
-      const code = item.charCodeAt();
-      console.log(code);
+      console.log(item, item.charCodeAt());
 
       let num;
-      code < 97
+      item.charCodeAt() < 97
         ? (num = 65 + ((item.charCodeAt() + n - 65) % 26))
         : (num = 97 + ((item.charCodeAt() + n - 97) % 26));
 
