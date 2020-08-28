@@ -1,19 +1,28 @@
 'use strict';
 
-function solution(rank, loc) {
-  for (let i = 0; i < rank.length; i++) {
-    for (let j = 0; j < rank.length; j++) {
-      if (rank[i] < rank[j]) {
-        console.log(rank);
-        const res = parseInt(rank.splice(i, 1).join(''));
-        // console.log(rank);
-        rank.push(res);
+function solution(priorities, location) {
+  var answer = 0;
+  let first = 0;
+
+  const arr = priorities.map((item, index) => {
+    return { item, index };
+  });
+
+  while (priorities.length > 0) {
+    first = arr.shift();
+
+    if (arr.some((x) => x.item > first.item)) {
+      arr.push(first);
+    } else {
+      answer++;
+      if (location === first.index) {
+        return answer;
       }
     }
   }
 }
 
-const rank = [2, 1, 3, 2];
-const loc = 2;
+const priorities = [2, 1, 3, 2];
+let location = 2;
 
-console.log(solution(rank, loc));
+console.log(solution(priorities, location));
