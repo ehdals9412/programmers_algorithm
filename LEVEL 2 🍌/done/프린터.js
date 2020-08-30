@@ -12,7 +12,7 @@ function solution(priorities, locations) {
   while (priorities.length > 0) {
     first = arr.shift();
 
-    if (arr.some((x) => x.item > first.item)) {
+    if (arr.some((second) => second.item > first.item)) {
       arr.push(first);
     } else {
       answer++;

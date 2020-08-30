@@ -3,6 +3,7 @@
 function solution(skill, skill_trees) {
   var answer = 0;
   let arr = skill.split('');
+  console.log(arr);
   let str = 0;
 
   for (let i = 0; i < skill_trees.length; i++) {
