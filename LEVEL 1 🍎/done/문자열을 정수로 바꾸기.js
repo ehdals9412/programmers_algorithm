@@ -16,20 +16,12 @@
 */
 
 function solution(s) {
-  var answer = 0;
-  // Early exit!!
-  if (s.length < 1 || s.length > 5) {
-    return;
-  }
-
-  // logic!!
-  for (let i = 0; i < s.length; i++) {
-    if (i == 0) {
-      console.log(parseInt(s[i]) * Math.pow(10));
-    }
-  }
-  return answer;
+  // Early Exit
+  if (s.length < 1 && s.length > 5) return;
+  return parseInt(s);
+  // return s / 1;
 }
 
-const s = '1234';
+const s = '-1234';
+
 console.log(solution(s));
