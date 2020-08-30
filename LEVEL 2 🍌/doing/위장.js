@@ -1,10 +1,12 @@
 'use strict';
 
 function solution(clothes) {
-  var answer = 0;
-  // 의상이 1 ~ 30개 이상이 아니라면 함수 종료 (Early Exit!)
-  if (clothes.length < 1 && clothes.length > 30) return;
+  let cnt = 0; // 의상 조합을 담을 배열
 
+  // 의상이 1 ~ 30개 이상이 아니라면 함수 종료 (Early Exit!)
+  //   if (clothes.length < 1 && clothes.length > 30) return;
+
+  /* time over 👎
   const mapping = clothes.map((item, index, array) => array[index][1]);
 
   for (let i = 0; i < mapping.length; i++) {
@@ -13,7 +15,9 @@ function solution(clothes) {
       if (mapping[i] !== mapping[j]) answer++;
     }
   }
-  return answer;
+  */
+
+  return cnt;
 }
 
 const clothes = [
