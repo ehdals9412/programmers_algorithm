@@ -1,7 +1,19 @@
 'use strict';
 
 function solution(clothes) {
-  let cnt = 0; // 의상 조합을 담을 배열
+  let cnt = 1; // 의상 조합을 담을 배열
+
+  const map = {};
+
+  for (let i = 0; i < clothes.length; i++) {
+    map[clothes[i][1]] = (map[clothes[i][1]] || 1) + 1;
+  }
+
+  for (let key in map) {
+    cnt *= map[key];
+  }
+
+  return cnt - 1;
 
   // 의상이 1 ~ 30개 이상이 아니라면 함수 종료 (Early Exit!)
   //   if (clothes.length < 1 && clothes.length > 30) return;
@@ -16,8 +28,6 @@ function solution(clothes) {
     }
   }
   */
-
-  return cnt;
 }
 
 const clothes = [
