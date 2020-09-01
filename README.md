@@ -20,7 +20,7 @@
 
 ### 사용 언어
 
-> Java, JavaScript -> (아직까진 JavaScript 위주로 푸는중)
+> Java, JavaScript
 
 ### 문제 출처
 
